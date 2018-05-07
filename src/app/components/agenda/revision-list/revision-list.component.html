@@ -1,0 +1,50 @@
+<h3>Lista de revisiones</h3>
+<hr>
+
+<br>
+
+
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+    <div class="table-responsive">
+
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Servicio</th>
+            <th class="text-right" scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let revision of agendaList">
+            <th scope="row">1</th>
+            <td>{{revision.cliente}}</td>
+            <td>{{revision.fecha}}</td>
+            <td>{{revision.hora}}</td>
+            <td>{{revision.revision}}</td>
+            <td style="width:115px" class="text-right">
+              <button (click)="onEdit(agenda)"
+                      type="button"
+                      class="btn btn-success">
+                <i class="far fa-edit"></i>
+              </button>
+              <button (click)="onDelet(agenda.$key)"
+                      type="button"
+                      class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>

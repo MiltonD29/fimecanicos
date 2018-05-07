@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+.row {
+  width: 100%;
+}
+
+.col {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button {
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+<h3>Lista de inventario</h3>
+<hr>
+
+<br>
+
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+    <div class="table-responsive">
+
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Descripción</th>
+            <th class="text-right" scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inventario of inventarioList">
+            <th scope="row">1</th>
+            <td>{{inventario.codigo}}</td>
+            <td>{{inventario.nombre}}</td>
+            <td>{{inventario.cantidad}}</td>
+            <td>{{inventario.descripcion}}</td>
+            <td style="width:115px" class="text-right">
+              <button (click)="onEdit(inventario)"
+                      type="button"
+                      class="btn btn-success">
+                <i class="far fa-edit"></i>
+              </button>
+              <button (click)="onDelet(inventario.$key)"
+                      type="button"
+                      class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<h3>Lista de clientes</h3>
+<hr>
+
+<br>
+
+
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+    <div class="table-responsive">
+
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Año</th>
+            <th scope="col">Placas</th>
+            <th class="text-right" scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clienteList">
+            <th scope="row">1</th>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.apellidos}}</td>
+            <td>{{cliente.telefono}}</td>
+            <td>{{cliente.correo}}</td>
+            <td>{{cliente.modelo}}</td>
+            <td>{{cliente.marca}}</td>
+            <td>{{cliente.anio}}</td>
+            <td>{{cliente.placas}}</td>
+            <td style="width:115px" class="text-right">
+              <button (click)="onEdit(cliente)"
+                      type="button"
+                      class="btn btn-success">
+                <i class="far fa-edit"></i>
+              </button>
+              <button (click)="onDelet(cliente.$key)"
+                      type="button"
+                      class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>

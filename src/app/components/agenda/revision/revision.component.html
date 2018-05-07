@@ -1,0 +1,90 @@
+<h3>Agenda</h3>
+<hr>
+
+<div class="animated fadeIn fast">
+
+    <form #agendaForm="ngForm" (ngSubmit)="onSubmit(agendaForm)">
+
+      <input style="display:none" type="hiden" name="$key" #$key="ngModel" [(ngModel)]="agendaService.selectedRevision.$key">
+
+        <div class="row">
+          <div class="col">
+            <!-- <div class="form-group">
+              <label>Nombre del cliente</label>
+              <select [(ngModel)]="agendaService.selectedRevision.cliente"
+                      class="form-control"
+                      name="cliente"
+                      #cliente="ngModel"
+                      required>
+                <option value="" disabled selected>Selecciona el cliente</option>
+                <option *ngFor="let cliente of clientes | async" value="cliente.nombre">{{cliente.nombre}} {{cliente.apellidos}}</option>
+              </select>
+            </div> -->
+
+
+          <div class="form-group">
+              <label style="padding-left:0px;" class="col-md-12"><b>Próxima revisión</b></label>
+              <select [(ngModel)]="agendaService.selectedRevision.revision"
+                      class="form-control"
+                      name="revision"
+                      #revision="ngModel"
+                      >
+                <option value="" disabled selected>Próxima revisión</option>
+                <option value="Mantenimiento preventivo">Mantenimiento preventivo</option>
+                <option value="Reparacion general">Reparación general</option>
+                <option value="Diagnostico">Diagnóstico</option>
+              </select>
+
+          </div>
+
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Fecha de revisión</label>
+              <input [(ngModel)]="agendaService.selectedRevision.fecha"
+                     type="date"
+                     class="form-control"
+                     name="fecha"
+                     #fecha="ngModel"
+                     required>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Hora de revisión</label>
+              <input [(ngModel)]="agendaService.selectedRevision.hora"
+                     type="time"
+                     class="form-control"
+                     name="hora"
+                     #hora="ngModel"
+                     required>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: row; justify-content: center;">
+              <div class="row">
+                <div class="col" style="width:50%">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save text-left"></i>
+                    Guardar
+                  </button>
+                </div>
+                <div class="col" style="width:50%">
+                  <button type="button" class="btn btn-secondary" type="reset" (click)="resetForm(agendaForm)">
+                    <i class="fas fa-sync-alt"></i>
+                    Limpiar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </form>

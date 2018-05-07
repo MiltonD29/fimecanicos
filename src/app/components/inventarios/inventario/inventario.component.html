@@ -1,0 +1,83 @@
+<h3>Inventario</h3>
+<hr>
+
+<div class="animated fadeIn fast">
+
+    <form #inventarioForm="ngForm" (ngSubmit)="onSubmit(inventarioForm)">
+
+      <input style="display:none" type="hiden" name="$key" #$key="ngModel" [(ngModel)]="inventarioService.selectedInventario.$key">
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Código</label>
+              <input [(ngModel)]="inventarioService.selectedInventario.codigo"
+                     type="text"
+                     class="form-control"
+                     name="codigo"
+                     #codigo="ngModel"
+                     placeholder="Código"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Nombre</label>
+              <input [(ngModel)]="inventarioService.selectedInventario.nombre"
+                     type="text"
+                     class="form-control"
+                     name="nombre"
+                     #nombre="ngModel"
+                     placeholder="Nombre"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Cantidad</label>
+              <input [(ngModel)]="inventarioService.selectedInventario.cantidad"
+                     type="number"
+                     class="form-control"
+                     name="cantidad"
+                     #cantidad="ngModel"
+                     placeholder="Cantidad"
+                     required>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col">
+
+            <div class="form-group">
+              <label>Descripción</label>
+              <textarea [(ngModel)]="inventarioService.selectedInventario.descripcion"
+                     type="email"
+                     class="form-control"
+                     name="descripcion"
+                     #descripcion="ngModel"
+                     required>
+              </textarea>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: row; justify-content: center;">
+              <div class="row">
+                <div class="col" style="width:50%">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save text-left"></i>
+                    Guardar
+                  </button>
+                </div>
+                <div class="col" style="width:50%">
+                  <button type="button" class="btn btn-secondary" type="reset" (click)="resetForm(inventarioForm)">
+                    <i class="fas fa-sync-alt"></i>
+                    Limpiar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </form>

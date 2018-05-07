@@ -1,0 +1,8 @@
+thead {
+  background-color: #056a87;
+  color: white;
+}
+
+tr, thead {
+  width: 100%;
+}

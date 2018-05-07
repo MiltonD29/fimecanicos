@@ -1,0 +1,58 @@
+<h3>Lista de empleados</h3>
+<hr>
+
+<br>
+
+
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+    <div class="table-responsive">
+
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Fecha de contratación</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Puesto</th>
+            <th class="text-right" scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleadoList">
+            <th scope="row">1</th>
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellidos}}</td>
+            <td>{{empleado.rfc}}</td>
+            <td>{{empleado.telefono}}</td>
+            <td>{{empleado.fecha_nac}}</td>
+            <td>{{empleado.fecha_con}}</td>
+            <td>{{empleado.direccion}}</td>
+            <td>{{empleado.puesto}}</td>
+            <td style="width:115px" class="text-right">
+              <button (click)="onEdit(empleado)"
+                      type="button"
+                      class="btn btn-success">
+                <i class="far fa-edit"></i>
+              </button>
+              <button (click)="onDelet(empleado.$key)"
+                      type="button"
+                      class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>

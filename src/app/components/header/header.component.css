@@ -1,0 +1,15 @@
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #056a87;
+}
+
+p {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+}

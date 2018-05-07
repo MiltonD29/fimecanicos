@@ -1,0 +1,14 @@
+.navbar {
+  height: 100px;
+  justify-content: space-around !important;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #056a87;
+  border-color: #056a87;
+}

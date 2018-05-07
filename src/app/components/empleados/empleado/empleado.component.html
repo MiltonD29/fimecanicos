@@ -1,0 +1,130 @@
+<h3>Empleado</h3>
+<hr>
+
+<div class="animated fadeIn fast">
+
+    <form #empleadoForm="ngForm" (ngSubmit)="onSubmit(empleadoForm)">
+
+      <input style="display:none" type="hiden" name="$key" #$key="ngModel" [(ngModel)]="empleadoService.selectedEmpleado.$key">
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.nombre"
+                     type="text"
+                     class="form-control"
+                     name="nombre"
+                     #nombre="ngModel"
+                     placeholder="Nombre del empleado"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.telefono"
+                     type="text"
+                     class="form-control"
+                     name="telefono"
+                     #telefono="ngModel"
+                     placeholder="Teléfono"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Fecha de nacimiento</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.fecha_nac"
+                     type="date"
+                     class="form-control"
+                     name="fecha_nac"
+                     #fecha_nac="ngModel"
+                     required>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Apellidos</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.apellidos"
+                     type="text"
+                     class="form-control"
+                     name="apellidos"
+                     #apellidos="ngModel"
+                     placeholder="Apellidos"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Dirección</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.direccion"
+                     type="text"
+                     class="form-control"
+                     name="direccion"
+                     #direccion="ngModel"
+                     placeholder="Dirección"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Fecha de contratación</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.fecha_con"
+                     type="date"
+                     class="form-control"
+                     name="fecha_con"
+                     #fecha_con="ngModel"
+                     required>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>RFC</label>
+              <input [(ngModel)]="empleadoService.selectedEmpleado.rfc"
+                     type="text"
+                     class="form-control"
+                     name="rfc"
+                     #rfc="ngModel"
+                     placeholder="RFC"
+                     required>
+            </div>
+
+            <div class="form-group">
+              <label>Puesto</label>
+              <select [(ngModel)]="empleadoService.selectedEmpleado.puesto"
+                      class="form-control"
+                      name="puesto"
+                      #puesto="ngModel"
+                      required>
+                <option value="" disabled selected>Selecciona el puesto</option>
+                <option value="Gerente">Gerente</option>
+                <option value="Mecanico">Mecánico</option>
+                <option value="Cajero">Cajero</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: row; justify-content: center;">
+              <div class="row">
+                <div class="col" style="width:50%">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save text-left"></i>
+                    Guardar
+                  </button>
+                </div>
+                <div class="col" style="width:50%">
+                  <button type="button" class="btn btn-secondary" type="reset" (click)="resetForm(empleadoForm)">
+                    <i class="fas fa-sync-alt"></i>
+                    Limpiar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </form>

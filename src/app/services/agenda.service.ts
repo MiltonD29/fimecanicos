@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
 // clases
@@ -13,10 +12,8 @@ export class AgendaService {
   agendaList: AngularFireList<any>;
   selectedRevision:Agenda = new Agenda();
 
-  clientes: Observable<any[]>;
-
   constructor( private firebase:AngularFireDatabase ) {
-    this.clientes = firebase.list('clientes').valueChanges();
+
   }
 
 

@@ -19,7 +19,7 @@ export class RevisionListComponent implements OnInit {
 
   agendaList: Agenda[];
 
-  constructor( private agendaService: AgendaService, public firebase:AngularFireDatabase ) { }
+  constructor( private agendaService: AgendaService ) { }
 
   ngOnInit() {
 

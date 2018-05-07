@@ -1,4 +1,4 @@
-<h3>Lista de inventario</h3>
+<h3>Lista de servicios</h3>
 <hr>
 
 <br>
@@ -7,33 +7,35 @@
 <div class="row animated fadeIn fast">
   <div class="col-md-12">
 
-    <div class="table-responsive">
+    <div class="table-responsive" >
 
       <table class="table table-responsive">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Código</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Descripción</th>
+            <th scope="col">Empleado</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Observación</th>
             <th class="text-right" scope="col">Opciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let inventario of inventarioList">
+          <tr *ngFor="let servicio of servicioList">
             <th scope="row">1</th>
-            <td>{{inventario.codigo}}</td>
-            <td>{{inventario.nombre}}</td>
-            <td>{{inventario.cantidad}}</td>
-            <td>{{inventario.descripcion}}</td>
+            <td>{{servicio.empleado}}</td>
+            <td>{{servicio.cliente}}</td>
+            <td>{{servicio.servicio}}</td>
+            <td>${{servicio.costo}}</td>
+            <td>{{servicio.observacion}}</td>
             <td style="width:115px" class="text-right">
-              <button (click)="onEdit(inventario)"
+              <button (click)="onEdit(servicio)"
                       type="button"
                       class="btn btn-success">
                 <i class="far fa-edit"></i>
               </button>
-              <button (click)="onDelet(inventario.$key)"
+              <button (click)="onDelet(servicio.$key)"
                       type="button"
                       class="btn btn-danger">
                 <i class="fas fa-trash"></i>

@@ -22,12 +22,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let revision of agendaList">
+          <tr *ngFor="let agenda of agendaList">
             <th scope="row">1</th>
-            <td>{{revision.cliente}}</td>
-            <td>{{revision.fecha}}</td>
-            <td>{{revision.hora}}</td>
-            <td>{{revision.revision}}</td>
+            <td>{{agenda.cliente}}</td>
+            <td>{{agenda.fecha}}</td>
+            <td>{{agenda.hora}}</td>
+            <td>{{agenda.revision}}</td>
             <td style="width:115px" class="text-right">
               <button (click)="onEdit(agenda)"
                       type="button"

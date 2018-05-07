@@ -13,8 +13,6 @@ import { Cliente } from '../../../models/cliente';
 })
 export class ClienteListComponent implements OnInit {
 
-  // @Input() public 
-
   clienteList: Cliente[];
 
   constructor( private clienteService: ClienteService ) { }

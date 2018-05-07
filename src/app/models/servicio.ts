@@ -2,14 +2,10 @@ export class Servicio {
   $key:string;
   cliente?:string;
   empleado?:string;
-  servicio:string;
-  // motor?:string;
-  // carroceria?:string;
-  // suspension?:string;
-  // frenos?:string;
-  // otros?:string;
-  // llantas_med?:string;
-  // llantas_cant?:string;
-  // observacion?:string;
-  costo:number;
+  servicio?:string;
+  llantas?:string;
+  cantidad?:string;
+  observacion?:string;
+  costo?:number;
+  costo_llanta?:number;
 }

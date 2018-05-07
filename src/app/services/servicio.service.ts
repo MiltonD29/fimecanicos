@@ -19,15 +19,11 @@ export class ServicioService {
       cliente:servicio.cliente,
       empleado:servicio.empleado,
       servicio:servicio.servicio,
-      // motor:servicio.motor,
-      // carroceria:servicio.carroceria,
-      // suspension:servicio.suspension,
-      // frenos:servicio.frenos,
-      // otros:servicio.otros,
-      // llantas_med:servicio.llantas_med,
-      // llantas_cant:servicio.llantas_cant,
-      // observacion:servicio.observacion,
-      costo:servicio.costo
+      llantas:servicio.llantas,
+      cantidad:servicio.cantidad,
+      observacion:servicio.observacion,
+      costo:servicio.costo,
+      costo_llanta:servicio.costo_llanta
     });
   }
 
@@ -36,15 +32,11 @@ export class ServicioService {
       cliente:servicio.cliente,
       empleado:servicio.empleado,
       servicio:servicio.servicio,
-      // motor:servicio.motor,
-      // carroceria:servicio.carroceria,
-      // suspension:servicio.suspension,
-      // frenos:servicio.frenos,
-      // otros:servicio.otros,
-      // llantas_med:servicio.llantas_med,
-      // llantas_cant:servicio.llantas_cant,
-      // observacion:servicio.observacion,
-      costo:servicio.costo
+      llantas:servicio.llantas,
+      cantidad:servicio.cantidad,
+      observacion:servicio.observacion,
+      costo:servicio.costo,
+      costo_llanta:servicio.costo_llanta
     });
   }
 

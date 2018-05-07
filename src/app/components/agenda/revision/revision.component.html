@@ -17,7 +17,7 @@
                       #cliente="ngModel"
                       required>
                 <option value="" disabled selected>Selecciona el cliente</option>
-                <option *ngFor="let cliente of clientes | async" value="cliente.nombre">{{cliente.nombre}} {{cliente.apellidos}}</option>
+                <option *ngFor="let cliente of clientes | async" value="{{cliente.nombre}} {{cliente.apellidos}}">{{cliente.nombre}} {{cliente.apellidos}}</option>
               </select>
             </div>
 

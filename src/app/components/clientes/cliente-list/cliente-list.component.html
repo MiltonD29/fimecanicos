@@ -3,17 +3,15 @@
 
 <br>
 
-
-
 <div class="row animated fadeIn fast">
   <div class="col-md-12">
 
     <div class="table-responsive">
 
-      <table class="table table-responsive">
+      <table class="table">
         <thead>
           <tr>
-            <th scope="col">ID</th>
+            <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Teléfono</th>
@@ -26,8 +24,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of clienteList">
-            <th scope="row">1</th>
+          <tr *ngFor="let cliente of clienteList; let i = index">
+            <th scope="row">{{i+1}}</th>
             <td>{{cliente.nombre}}</td>
             <td>{{cliente.apellidos}}</td>
             <td>{{cliente.telefono}}</td>
@@ -51,6 +49,10 @@
           </tr>
         </tbody>
       </table>
+
+      <div *ngIf="clienteList?.length < 1" class="alert alert-warning" role="alert">
+        <strong>No hay</strong> clientes que mostrar
+      </div>
 
     </div>
 

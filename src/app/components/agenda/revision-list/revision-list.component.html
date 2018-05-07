@@ -10,10 +10,10 @@
 
     <div class="table-responsive">
 
-      <table class="table table-responsive">
+      <table class="table">
         <thead>
           <tr>
-            <th scope="col">ID</th>
+            <th scope="col">#</th>
             <th scope="col">Cliente</th>
             <th scope="col">Fecha</th>
             <th scope="col">Hora</th>
@@ -22,8 +22,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let agenda of agendaList">
-            <th scope="row">1</th>
+          <tr *ngFor="let agenda of agendaList; let i = index">
+            <th scope="row">{{i+1}}</th>
             <td>{{agenda.cliente}}</td>
             <td>{{agenda.fecha}}</td>
             <td>{{agenda.hora}}</td>
@@ -43,6 +43,10 @@
           </tr>
         </tbody>
       </table>
+
+      <div *ngIf="agendaList?.length < 1" class="alert alert-warning" role="alert">
+        <strong>No hay</strong> revisiones que mostrar
+      </div>
 
     </div>
 

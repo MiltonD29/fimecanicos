@@ -42,6 +42,9 @@ import { ServicioService } from './services/servicio.service';
 import { HistorialesComponent } from './components/historiales/historiales.component';
 import { HistorialesListComponent } from './components/historiales/historiales-list/historiales-list.component';
 
+//piepes
+import { KeysPipe } from './pipes/keys.pipe';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +68,8 @@ import { HistorialesListComponent } from './components/historiales/historiales-l
     ServicioComponent,
     ServiciosListComponent,
     HistorialesComponent,
-    HistorialesListComponent
+    HistorialesListComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

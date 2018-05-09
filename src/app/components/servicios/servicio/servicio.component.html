@@ -1,0 +1,246 @@
+<h3>Servicios</h3>
+<hr>
+
+<div class="animated fadeIn fast">
+
+    <form #servicioForm="ngForm" (ngSubmit)="onSubmit(servicioForm)"  novalidate>
+
+      <input style="display:none" type="hiden" name="$key" #$key="ngModel" [(ngModel)]="servicioService.selectedServicio.$key">
+
+        <div class="row">
+          <div class="col">
+
+            <div class="form-group">
+              <label><b>Nombre del empleado</b></label>
+              <select [(ngModel)]="servicioService.selectedServicio.empleado"
+                      class="form-control"
+                      name="empleado"
+                      #empleado="ngModel"
+                      required>
+                <option value="" disabled selected>Selecciona el empleado</option>
+                <option *ngFor="let empleado of empleados | async" value="{{empleado.nombre}} {{empleado.apellidos}}">{{empleado.nombre}} {{empleado.apellidos}}</option>
+              </select>
+            </div>
+
+
+          <div class="form-group">
+              <label style="padding-left:0px;" class="col-md-12">Servicio</label>
+              <select [(ngModel)]="servicioService.selectedServicio.servicio"
+                      class="form-control"
+                      name="servicio"
+                      #servicio="ngModel"
+                      >
+                <option value="" disabled selected>Selecciona el servicio</option>
+                <optgroup label="Motor">
+                  <option value="Ruidos en general"> Ruidos en general</option>
+                  <option value="Soportes"> Soportes</option>
+                  <option value="Filtro de aire del motor"> Filtro de aire del motor</option>
+                  <option value="Filtro a/c"> Filtro a/c</option>
+                  <option value="Nivel de fluido y fugas"> Nivel de fluido y fugas</option>
+                  <option value="Bandas"> Bandas</option>
+                  <option value="Sistema de enfriamiento"> Sistema de enfriamiento</option>
+                  <option value="Mangueras"> Mangueras</option>
+                  <option value="Nivel de aceite"> Tran./nivel de aceite</option>
+                  <option value="Motor/niveles"> Motor/niveles</option>
+                  <option value="Direccion"> Dirección /nivel de aceite</option>
+                  <option value="Silenciador"> Silenciador/ sist. de escape</option>
+                <optgroup label="Carrocería">
+                  <option value="Salpicaderas"> Salpicaderas </option>
+                  <option value="Facia delantera"> Facia delantera </option>
+                  <option value="Facia trasera"> Facia trasera </option>
+                  <option value="Puertas"> Puertas </option>
+                  <option value="Toldo"> Toldo </option>
+                  <option value="Tapa maletero"> Tapa maletero </option>
+                  <option value="Capo delantero"> Capo delantero </option>
+                  <option value="Retrovisores exteriores"> Retrovisores exteriores </option>
+                  <option value="Elevadores electricos"> Elevadores eléctricos </option>
+                  <option value="Sistema de airbag"> Sistema de airbag </option>
+                  <option value="Cinturones de seguridad"> Cinturones de seguridad </option>
+                <optgroup label="Suspensión">
+                  <option value="Amortiguadores delanteros"> Amortiguadores delanteros </option>
+                  <option value="Amortiguadores traseros"> Amortiguadores traseros </option>
+                  <option value="Rotulas"> Rótulas </option>
+                  <option value="Cubrepolvos"> Cubrepolvos </option>
+                  <option value="Presion de las llantas"> Presión de las llantas </option>
+                  <option value="Candados de rin"> Candados de rin </option>
+                  <option value="Terminales"> Terminales </option>
+                  <option value="Diferencial"> Diferencial </option>
+                  <option value="Hules de barra estabilizadora"> Hules de barra estabilizadora </option>
+                  <option value="Cremallera"> Cremallera </option>
+                <optgroup label="Frenos">
+                  <option value="Balatas delanteras"> Balatas delanteras </option>
+                  <option value="Balatas traseras"> Balatas traseras </option>
+                  <option value="Discos"> Discos </option>
+                  <option value="Tambores"> Tambores </option>
+                  <option value="Cilindro maestro"> Cilindro maestro </option>
+                  <option value="Fugas"> Fugas </option>
+                  <option value="Liquido de frenos"> Líquido de frenos </option>
+                  <option value="Ajuste freno de mano"> Ajuste freno de mano </option>
+                <optgroup label="Otros">
+                  <option value="Bateria"> Batería </option>
+                  <option value="Luces"> Luces </option>
+                  <option value="Limpiaparabrisas"> Limpiaparabrisas </option>
+                  <option value="Llantas"> Llantas </option>
+              </select>
+
+          </div>
+
+          <div class="form-group">
+            <label>Costo</label>
+            <input [(ngModel)]="servicioService.selectedServicio.costo"
+                   type="number"
+                   class="form-control"
+                   name="costo"
+                   #costo="ngModel"
+                   placeholder="Costo"
+                   >
+          </div>
+
+          <div class="form-group">
+            <label>Fecha</label>
+            <input [(ngModel)]="servicioService.selectedServicio.fecha"
+                   type="date"
+                   class="form-control"
+                   name="fecha"
+                   #fecha="ngModel"
+                   placeholder="Fecha"
+                   >
+          </div>
+
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="col">
+
+            <div class="form-group">
+              <label><b>Nombre del cliente</b></label>
+              <select [(ngModel)]="servicioService.selectedServicio.cliente"
+                      class="form-control"
+                      name="cliente"
+                      #cliente="ngModel"
+                      >
+                <option value="" disabled selected>Selecciona el cliente</option>
+                <option *ngFor="let cliente of clientes | async" value="{{cliente.nombre}} {{cliente.apellidos}}">{{cliente.nombre}} {{cliente.apellidos}}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Modelo y año</label>
+              <input [(ngModel)]="servicioService.selectedServicio.modelo"
+                     type="text"
+                     class="form-control"
+                     name="modelo"
+                     #modelo="ngModel"
+                     placeholder="Modelo y año"
+                     >
+            </div>
+
+            <div class="form-group">
+              <label>Observación</label>
+              <textarea [(ngModel)]="servicioService.selectedServicio.observacion"
+                     class="form-control"
+                     name="observacion"
+                     #observacion="ngModel"
+                     >
+              </textarea>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+
+            <div class="form-group">
+                <label style="padding-left:0px;" class="col-md-12">Llantas</label>
+                <select [(ngModel)]="servicioService.selectedServicio.llantas"
+                        class="form-control"
+                        name="llantas"
+                        #llantas="ngModel"
+                        >
+                  <option value="" disabled selected>Llantas</option>
+                  <option value="Ninguno">Ninguno</option>
+
+                  <optgroup label="Medida - 14Inch">
+                    <option value="165-65-14">165-65-14</option>
+                    <option value="175-65-14">175-65-14</option>
+                    <option value="175-70-14">175-70-14</option>
+                    <option value="185-60-14">185-60-14</option>
+                    <option value="185-65-14">185-65-14</option>
+
+
+                  <optgroup label="Medida - 15Inch">
+                    <option value="175-65-15">175-65-15</option>
+                    <option value="185-55-15">185-55-15</option>
+                    <option value="185-60-15">185-60-15</option>
+                    <option value="185-65-15">185-65-15</option>
+                    <option value="195-50-15">195-50-15</option>
+
+
+                  <optgroup label="Medida - 16Inch">
+                    <option value="175-60-16">175-60-16</option>
+                    <option value="185-55-16">185-55-16</option>
+                    <option value="195-50-16">195-50-16</option>
+                    <option value="195-55-16">195-55-16</option>
+                    <option value="195-60-16">195-60-16</option>
+
+
+                  <optgroup label="Medida - 17Inch">
+                    <option value="185-50-17">185-50-17</option>
+                    <option value="205-40-17">205-40-17</option>
+                    <option value="205-45-17">205-45-17</option>
+                    <option value="205-50-17">205-50-17</option>
+                    <option value="205-55-17">205-55-17</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+              <label>Cantidad</label>
+              <input [(ngModel)]="servicioService.selectedServicio.cantidad"
+                     type="number"
+                     class="form-control"
+                     name="cantidad"
+                     #cantidad="ngModel"
+                     placeholder="Cantidad"
+                     min="1" max="4" pattern="^[0-9]+"
+                     >
+            </div>
+
+            <div class="form-group">
+              <label>Costo llanta</label>
+              <input [(ngModel)]="servicioService.selectedServicio.costo_llanta"
+                     type="number"
+                     class="form-control"
+                     name="costo_llanta"
+                     #costo_llanta="ngModel"
+                     placeholder="Costo llanta"
+                     min="1"
+                     >
+            </div>
+
+
+            <div class="form-group" style="display: flex; flex-direction: row; justify-content: center;">
+              <div class="row">
+                <div class="col" style="width:50%">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save text-left"></i>
+                    Guardar
+                  </button>
+                </div>
+                <div class="col" style="width:50%">
+                  <button type="button" class="btn btn-secondary" type="reset" (click)="resetForm(servicioForm)">
+                    <i class="fas fa-sync-alt"></i>
+                    Limpiar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+      </div>
+    </form>

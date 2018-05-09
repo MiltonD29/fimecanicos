@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 //firebase
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFirestore } from 'angularfire2/firestore';
+// import { AngularFirestore } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
 
@@ -29,12 +29,22 @@ import { ClienteListComponent } from './components/clientes/cliente-list/cliente
 import { InventariosComponent } from './components/inventarios/inventarios.component';
 import { InventarioComponent } from './components/inventarios/inventario/inventario.component';
 import { InventariosListComponent } from './components/inventarios/inventarios-list/inventarios-list.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { ServicioComponent } from './components/servicios/servicio/servicio.component';
+import { ServiciosListComponent } from './components/servicios/servicios-list/servicios-list.component';
 
 //servicios
 import { EmpleadoService } from './services/empleado.service';
 import { ClienteService } from './services/cliente.service';
 import { AgendaService } from './services/agenda.service';
 import { InventarioService } from './services/inventario.service';
+import { ServicioService } from './services/servicio.service';
+import { HistorialesComponent } from './components/historiales/historiales.component';
+import { HistorialesListComponent } from './components/historiales/historiales-list/historiales-list.component';
+
+//piepes
+import { KeysPipe } from './pipes/keys.pipe';
+
 
 @NgModule({
   declarations: [
@@ -54,6 +64,12 @@ import { InventarioService } from './services/inventario.service';
     InventariosComponent,
     InventarioComponent,
     InventariosListComponent,
+    ServiciosComponent,
+    ServicioComponent,
+    ServiciosListComponent,
+    HistorialesComponent,
+    HistorialesListComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
@@ -67,8 +83,8 @@ import { InventarioService } from './services/inventario.service';
     EmpleadoService,
     ClienteService,
     AgendaService,
-    InventarioService,
-    AngularFirestore
+    ServicioService,
+    InventarioService
   ],
   bootstrap: [AppComponent]
 })

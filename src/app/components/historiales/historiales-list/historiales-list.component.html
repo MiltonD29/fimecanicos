@@ -1,0 +1,39 @@
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+    <div class="table-responsive" >
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Empleado</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Modelo del auto</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">Observación</th>
+            <th scope="col">Fecha de servicio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let historial of historiales | async; let i = index">
+            <th>{{i+1}}</th>
+            <td>{{historial.empleado}}</td>
+            <td>{{historial.cliente}}</td>
+            <td>{{historial.modelo}}</td>
+            <td>{{historial.servicio}}</td>
+            <td>{{historial.observacion}}</td>
+            <td>{{historial.fecha}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="historiales?.length < 1" class="alert alert-warning" role="alert">
+        <strong>No hay</strong> historiales que mostrar
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

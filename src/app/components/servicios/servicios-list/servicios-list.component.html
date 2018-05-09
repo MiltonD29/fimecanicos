@@ -1,0 +1,108 @@
+<h3>Lista de servicios</h3>
+<hr>
+
+<br>
+
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+    <div class="table-responsive" >
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Empleado</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">Costo servicio</th>
+            <th scope="col">Llantas</th>
+            <th align="center" scope="col">Costo | Cant </th>
+            <th scope="col">Observación</th>
+            <th class="text-right" scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let servicio of servicioList; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{servicio.empleado}}</td>
+            <td>{{servicio.cliente}}</td>
+            <td>{{servicio.servicio}}</td>
+            <td>${{servicio.costo}}</td>
+            <td>{{servicio.llantas}}</td>
+            <td align="center">{{servicio.costo_llanta}} | {{servicio.cantidad}}</td>
+            <td>{{servicio.observacion}}</td>
+            <td style="width:115px" class="text-right">
+              <button (click)="onEdit(servicio)"
+                      type="button"
+                      class="btn btn-success">
+                <i class="far fa-edit"></i>
+              </button>
+              <button (click)="onDelet(servicio.$key)"
+                      type="button"
+                      class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="servicioList?.length < 1" class="alert alert-warning" role="alert">
+        <strong>No hay</strong> servicios que mostrar
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <form  novalidate>
+      <div class="form-group row">
+        <label for="subtotal" class="col-sm-2 col-form-label">Subtotal</label>
+        <div class="col-sm-10">
+          <input disabled type="text" class="form-control" id="subtotal" value='$ {{ getSubTotal() }}'>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="iva" class="col-sm-2 col-form-label">IVA</label>
+        <div class="col-sm-10">
+          <input disabled type="text" class="form-control" id="iva" value='$ {{ getIVA() }}'>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="total" class="col-sm-2 col-form-label">Total</label>
+        <div class="col-sm-10">
+          <input disabled type="text" class="form-control" id="total" value='$ {{ getTotalServicios() }}'>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="recibido" class="col-sm-2 col-form-label">Recibido</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="recibido" name="recibido" [(ngModel)]="recibido" >
+        </div>
+        <label for="cambio" class="col-sm-2 col-form-label">Cambio</label>
+        <div class="col-sm-4">
+          <input disabled type="text" class="form-control" id="cambio" value='$ {{ getCambio() }}'>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <div class="col-sm-5">
+          <button type="submit" class="btn btn-success">Imprimir ticket</button>
+        </div>
+      </div> -->
+
+    </form>
+    <hr>
+  </div>
+
+</div>

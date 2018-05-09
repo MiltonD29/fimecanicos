@@ -9,7 +9,7 @@
 
     <div class="table-responsive">
 
-      <table class="table table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -21,8 +21,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let inventario of inventarioList">
-            <th scope="row">1</th>
+          <tr *ngFor="let inventario of inventarioList; let i = index">
+            <th scope="row">{{i+1}}</th>
             <td>{{inventario.codigo}}</td>
             <td>{{inventario.nombre}}</td>
             <td>{{inventario.cantidad}}</td>
@@ -42,6 +42,10 @@
           </tr>
         </tbody>
       </table>
+
+      <div *ngIf="inventarioList?.length < 1" class="alert alert-warning" role="alert">
+        <strong>No hay</strong> inventarios que mostrar
+      </div>
 
     </div>
 

@@ -21,11 +21,11 @@ import { Observable } from 'rxjs/Observable';
 })
 export class RevisionComponent implements OnInit {
 
-  // clientes: Observable<any[]>;
+  clientes: Observable<any[]>;
 
 
   constructor( private agendaService: AgendaService,  public firebase:AngularFireDatabase) {
-    // this.clientes = firebase.list('clientes').valueChanges();
+    this.clientes = firebase.list('clientes').valueChanges();
   }
 
   ngOnInit() {

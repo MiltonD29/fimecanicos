@@ -39,6 +39,7 @@
                      name="cantidad"
                      #cantidad="ngModel"
                      placeholder="Cantidad"
+                     min="1" pattern="^[0-9]+"
                      required>
             </div>
 
@@ -53,7 +54,6 @@
             <div class="form-group">
               <label>Descripción</label>
               <textarea [(ngModel)]="inventarioService.selectedInventario.descripcion"
-                     type="email"
                      class="form-control"
                      name="descripcion"
                      #descripcion="ngModel"

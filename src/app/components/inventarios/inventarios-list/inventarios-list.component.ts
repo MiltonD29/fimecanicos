@@ -15,7 +15,7 @@ export class InventariosListComponent implements OnInit {
 
   inventarioList: Inventario[];
 
-  constructor( private inventarioService: InventarioService ) { }
+  constructor( public inventarioService: InventarioService ) { }
 
   ngOnInit() {
 

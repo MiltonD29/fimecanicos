@@ -8,7 +8,7 @@ export class ServicioService {
   servicioList: AngularFireList<any>;
   selectedServicio:Servicio = new Servicio();
 
-  constructor( private firebase:AngularFireDatabase ) { }
+  constructor( public firebase:AngularFireDatabase ) { }
 
   getServicios(){
     return this.servicioList = this.firebase.list('servicios')

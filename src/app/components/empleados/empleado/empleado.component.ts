@@ -14,7 +14,7 @@ import { Empleado } from '../../../models/empleado';
 })
 export class EmpleadoComponent implements OnInit {
 
-  constructor( private empleadoService: EmpleadoService ) { }
+  constructor( public empleadoService: EmpleadoService ) { }
 
   ngOnInit() {
     this.empleadoService.getEmpleados();

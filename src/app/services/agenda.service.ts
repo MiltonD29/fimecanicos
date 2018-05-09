@@ -12,7 +12,7 @@ export class AgendaService {
   agendaList: AngularFireList<any>;
   selectedRevision:Agenda = new Agenda();
 
-  constructor( private firebase:AngularFireDatabase ) {
+  constructor( public firebase:AngularFireDatabase ) {
 
   }
 

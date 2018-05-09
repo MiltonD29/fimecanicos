@@ -14,7 +14,7 @@ import { Cliente } from '../../../models/cliente';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor( private clienteService: ClienteService ) { }
+  constructor( public clienteService: ClienteService ) { }
 
   ngOnInit() {
     this.clienteService.getClientes();

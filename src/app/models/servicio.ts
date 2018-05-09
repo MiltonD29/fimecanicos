@@ -1,11 +1,13 @@
 export class Servicio {
   $key:string;
-  cliente?:string;
-  empleado?:string;
-  servicio?:string;
+  cliente:string;
+  empleado:string;
+  servicio:string;
   llantas?:string;
-  cantidad?:string;
+  cantidad?:number;
   observacion?:string;
-  costo?:number;
+  costo:number;
   costo_llanta?:number;
+  modelo:string;
+  fecha:string;
 }

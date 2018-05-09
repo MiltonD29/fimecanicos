@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAvSTL9YgaLP_Lrmk7GLCD52grtoxHc9fI",
-    authDomain: "fimecanicos-taller.firebaseapp.com",
-    databaseURL: "https://fimecanicos-taller.firebaseio.com",
-    projectId: "fimecanicos-taller",
-    storageBucket: "fimecanicos-taller.appspot.com",
-    messagingSenderId: "503015648594"
+    apiKey: "AIzaSyDcspVxfGfU-MKXIqu4kevjnnWlpj9iLjA",
+    authDomain: "fimecanicos-6320b.firebaseapp.com",
+    databaseURL: "https://fimecanicos-6320b.firebaseio.com",
+    projectId: "fimecanicos-6320b",
+    storageBucket: "fimecanicos-6320b.appspot.com",
+    messagingSenderId: "487682723041"
   }
 };

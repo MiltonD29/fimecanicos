@@ -1,6 +1,6 @@
 export class Agenda {
   $key:string;
-  cliente:{};
+  cliente:string;
   fecha:string;
   hora:string;
   revision:string;

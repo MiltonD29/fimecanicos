@@ -23,7 +23,9 @@ export class ServicioService {
       cantidad:servicio.cantidad,
       observacion:servicio.observacion,
       costo:servicio.costo,
-      costo_llanta:servicio.costo_llanta
+      costo_llanta:servicio.costo_llanta,
+      modelo:servicio.modelo,
+      fecha:servicio.fecha
     });
   }
 
@@ -36,7 +38,9 @@ export class ServicioService {
       cantidad:servicio.cantidad,
       observacion:servicio.observacion,
       costo:servicio.costo,
-      costo_llanta:servicio.costo_llanta
+      costo_llanta:servicio.costo_llanta,
+      modelo:servicio.modelo,
+      fecha:servicio.fecha
     });
   }
 

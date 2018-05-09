@@ -14,7 +14,7 @@ import { Inventario } from '../../../models/inventario';
 })
 export class InventarioComponent implements OnInit {
 
-  constructor( private inventarioService: InventarioService ) { }
+  constructor( public inventarioService: InventarioService ) { }
 
   ngOnInit() {
     this.inventarioService.getInventarios();

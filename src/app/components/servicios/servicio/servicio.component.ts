@@ -23,7 +23,7 @@ export class ServicioComponent implements OnInit {
   clientes: Observable<any[]>;
   empleados: Observable<any[]>;
 
-  constructor( private servicioService: ServicioService,  public firebase:AngularFireDatabase ) {
+  constructor( public servicioService: ServicioService,  public firebase:AngularFireDatabase ) {
     this.clientes = firebase.list('clientes').valueChanges();
     this.empleados = firebase.list('empleados').valueChanges();
   }

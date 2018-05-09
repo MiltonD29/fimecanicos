@@ -24,7 +24,7 @@ export class RevisionComponent implements OnInit {
   clientes: Observable<any[]>;
 
 
-  constructor( private agendaService: AgendaService,  public firebase:AngularFireDatabase) {
+  constructor( public agendaService: AgendaService,  public firebase:AngularFireDatabase) {
     this.clientes = firebase.list('clientes').valueChanges();
   }
 

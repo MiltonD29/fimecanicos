@@ -8,7 +8,7 @@ export class EmpleadoService {
   empleadoList: AngularFireList<any>;
   selectedEmpleado:Empleado = new Empleado();
 
-  constructor( private firebase:AngularFireDatabase ) { }
+  constructor( public firebase:AngularFireDatabase ) { }
 
   getEmpleados(){
     return this.empleadoList = this.firebase.list('empleados')

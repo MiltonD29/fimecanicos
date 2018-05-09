@@ -20,7 +20,7 @@ export class ServiciosListComponent implements OnInit {
   totalllanta:number = 0;
   totalservicio:number = 0;
 
-  constructor( private servicioService: ServicioService ) { }
+  constructor( public servicioService: ServicioService ) { }
 
   ngOnInit() {
 
